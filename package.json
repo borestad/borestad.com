@@ -1,0 +1,12 @@
+{
+  "scripts": {
+    "dev": "parcel serve src/index.html",
+    "predist": "rm -rf {dist,node_modules/.tmp}",
+    "dist": "parcel build -d node_modules/.tmp --no-source-maps --public-url . src/index.html",
+    "postdist": "mkdir -p dist && inliner -m node_modules/.tmp/index.html > dist/index.html"
+  },
+  "dependencies": {
+    "inliner": "^1.13.1",
+    "parcel-bundler": "^1.12.4"
+  }
+}
